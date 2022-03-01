@@ -1,0 +1,17 @@
+.background {
+    background-image: url('../public/assets/market-menu.jpg');
+    background-size: cover;
+    width: 143vh;
+    height: 100vh;
+}
+.forest {
+    width: 55vh;
+    height: 50vh;
+    background-size: 143vh 100vh;
+    background-image: url('../public/assets/Forest.png');
+    transition: transform .2s ease-out;
+    z-index: 1;
+    &:hover {
+        transform: scale(1.4,1.4) translate(4.5vh,4vh);
+    }
+}
