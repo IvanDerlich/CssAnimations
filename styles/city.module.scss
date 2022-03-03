@@ -1,5 +1,5 @@
 .background {
-    background-image: url('../public/assets/market-menu.jpg');
+    background-image: url('../public/assets/city.jpg');
     background-size: cover;
     width: 143vh;
     height: 100vh;
@@ -7,8 +7,7 @@
 }
 
 .backgroundShadowed {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../public/assets/market-menu.jpg');
-    // background-size: cover;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url('../public/assets/city.jpg');
     width: 143vh;
     height: 100vh;
 }
@@ -16,7 +15,7 @@
 .building {  
     background-size: 143vh 100vh;
     background-repeat: no-repeat;
-    transition: all .2s ease-out;
+    transition: all .4s linear;
     position: absolute;    
 }
 
@@ -38,6 +37,7 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 3;
 }
 
 @mixin forestGeometry {
@@ -48,10 +48,11 @@
 }
 
 .forest {
-    background-image: url('../public/assets/Forest.png');
+    background-image: url('../public/assets/forest.png');
     @include forestGeometry();
     &:hover {
         transform: scale(1.4,1.4) translate(4.5vh,4vh);
+        z-index: 2;
     }
 }
 
@@ -62,7 +63,7 @@
 
 .forestSelected {
     @include selectedBuilding();
-    background-size: 80vh 56vh;    
+    background-size: 80vh 56vh;  
 }
 
 @mixin ludusGeometry {
@@ -74,10 +75,11 @@
 }
 
 .ludus {
-    background-image: url('../public/assets/Ludus.png');
+    background-image: url('../public/assets/ludus.png');
     @include ludusGeometry();
     &:hover {
         transform: scale(1.4,1.4);
+        z-index: 2;
     }
 }
 
@@ -88,4 +90,63 @@
 
 .ludusSelected {
     @include selectedBuilding()
+}
+
+@mixin coliseumGeometry {
+    width: 55vh;
+    height: 40vh;
+    left: 41vh;
+    top: 31vh;
+    background-position: -41vh -31vh; 
+}
+
+.coliseum {
+    background-image: url('../public/assets/coliseum.png');
+    @include coliseumGeometry();
+    &:hover {
+        transform: scale(1.4,1.4);
+    }    
+}
+
+.coliseumShadowed {
+    opacity: 0.2;
+    @include shadowedBuilding(); 
+}
+
+.coliseumSelected {
+    @include selectedBuilding();
+    background-size: 80vh 56vh;  
+    background-position-y: -17vh;
+    background-position-x: -23vh;
+}
+
+@mixin marketGeometry {
+    width: 38vh;
+    height: 23vh;
+    left: 97vh;
+    top: 13vh;
+    background-position-x: -97vh;
+    background-position-y: -13vh;
+}
+
+.market {
+    background-image: url('../public/assets/market.png');
+    @include marketGeometry();
+    &:hover {
+        transform: scale(1.4,1.4);
+    }
+}
+
+.marketShadowed {
+    opacity: 0.2;
+    @include shadowedBuilding(); 
+}
+
+.marketSelected {
+    @include selectedBuilding();
+    width: 200vh;    
+    height: 200vh;
+    background-size: 100vh 70vh;  
+    background-position-y: -9vh;
+    background-position-x: -68vh;
 }
