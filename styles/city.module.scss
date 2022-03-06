@@ -144,8 +144,6 @@
 
 .marketSelected {
     @include selectedBuilding();
-    width: 200vh;    
-    height: 200vh;
     background-size: 100vh 70vh;  
     background-position-y: -9vh;
     background-position-x: -68vh;
